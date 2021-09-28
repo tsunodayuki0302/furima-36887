@@ -31,7 +31,7 @@
 | shipping_area_id       | integer    | null: false                    |
 | days_to_ship_id        | integer    | null: false                    |
 | selling_price          | integer    | null: false                    |
-| user_id                | references | null: false, foreign_key: true |
+| user                   | references | null: false, foreign_key: true |
 
 ### Association
 
