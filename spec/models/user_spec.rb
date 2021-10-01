@@ -11,7 +11,7 @@ RSpec.describe User, type: :model do
       end
     end
 
-    context '新規登録できる場合' do
+    context '新規登録できない場合' do
       it "nameが空だと登録できない" do
         @user.name = ''
         @user.valid?
