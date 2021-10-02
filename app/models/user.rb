@@ -4,6 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :items
+  #has_many :purchase_records
+
   validates :name, presence: true
   validates :password, format:{with: /\A[a-zA-Z0-9]+\z/ }
   validates :first_name, presence: true, format:{with: /\A[ぁ-んァ-ン一-龥々ー]+\z/ }
