@@ -131,6 +131,7 @@
       <li class='list'>
         <% @items.each do |item| %>
         <div class='item-img-content'>
+        <%= link_to item_path(item.id) do %>
           <%= image_tag item.image, class: "item-img" %>
 
           <%# 商品が売れていればsold outを表示しましょう %>
@@ -153,8 +154,9 @@
               <span class='star-count'>0</span>
             </div>
           </div>
-        </div>
         <% end %>
+        </div>
+      <% end %>
       </li>
       <% if @items[0] == nil %>
       <li class='list'>
