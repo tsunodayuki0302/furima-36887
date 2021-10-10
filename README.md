@@ -52,13 +52,13 @@
 - has_one :shipping_address
 
 
-## shipping_address テーブル
+## address テーブル
 
 | Column              | Type       | Options                        |
 | ------------------- | ---------- | ------------------------------ |
 | telephone_number    | string     | null: false                    |
 | postal_code         | string     | null: false                    |
-| prefecture_id      | string     | null: false                    |
+| prefecture_id       | string     | null: false                    |
 | municipalities      | string     | null: false                    |
 | address             | string     | null: false                    |
 | building_name       | string     |                                |

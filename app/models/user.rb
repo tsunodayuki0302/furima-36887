@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :items
-  #has_many :purchase_records
+  has_many :purchase_records
 
   validates :name, presence: true
   validates :password, format:{with: /\A[a-zA-Z0-9]+\z/ }
