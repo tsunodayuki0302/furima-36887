@@ -52,7 +52,6 @@ RSpec.describe ShippingAddress, type: :model do
     it "郵便番号にハイフンがないと登録できない" do
       @shipping_address.postal_code = '1234567'
       @shipping_address.valid?
-      binding.pry
       expect(@shipping_address.errors.full_messages).to include("Postal code is invalid")
     end
     it "電話番号が半角数値以外だと登録できないこと" do
