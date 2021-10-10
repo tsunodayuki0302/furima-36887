@@ -1,9 +1,9 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!, only: [:index ]
+  before_action :item_params, only: [:index, :create ]
 
   def index
     @shipping_address = ShippingAddress.new
-    item_params
     if current_user.id == @item.user_id or @item.purchase_record != nil
       redirect_to root_path
     end
@@ -12,12 +12,10 @@ class OrdersController < ApplicationController
   def create
     @shipping_address = ShippingAddress.new(address_params)
     if @shipping_address.valid?
-      item_params
       pay_item
       @shipping_address.save
       redirect_to root_path(@shipping_address)
     else
-      item_params
       render :index
     end
   end
